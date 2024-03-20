@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>msgw-demo</artifactId>
+    <groupId>com.tencent.tsf</groupId>
+    <version>1.29.4-Finchley-RELEASE</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>msgw-scg</artifactId>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.tencent.tsf</groupId>
+      <artifactId>spring-cloud-tsf-msgw-scg</artifactId>
+    </dependency>
+    <!--TSF 其它 SDK 依赖，添加到 msgw-scg 依赖的后面-->
+    <dependency>
+      <groupId>com.tencent.tsf</groupId>
+      <artifactId>spring-cloud-tsf-starter</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>com.tencent.tsf</groupId>
+          <artifactId>spring-cloud-tsf-swagger</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>
